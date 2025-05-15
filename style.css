@@ -1,0 +1,229 @@
+body {
+            font-family: Arial, sans-serif;
+            background: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .parking-form-container {
+            background: #fff;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .parking-form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .parking-form label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        .parking-form input, .parking-form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .parking-form button {
+            width: 100%;
+            padding: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .parking-form button:hover {
+            background: #0056b3;
+        }
+        .slots-container {
+            max-width: 900px;
+            margin: 40px auto;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+            align-items: flex-start;
+            background: #f9fafb;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            padding: 32px 24px;
+        }
+        .available-slots, .occupied-slots {
+            background: #fff;
+            padding: 24px 18px;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+            width: 48%;
+            min-width: 260px;
+            transition: box-shadow 0.2s;
+        }
+        .available-slots:hover, .occupied-slots:hover {
+            box-shadow: 0 6px 24px rgba(0,0,0,0.12);
+        }
+        .available-slots h3, .occupied-slots h3 {
+            margin-top: 0;
+            font-size: 22px;
+            text-align: center;
+            letter-spacing: 1px;
+            color: #222;
+        }
+        .available-slots ul, .occupied-slots ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .available-slots li {
+            color: #28a745;
+            margin-bottom: 14px;
+            font-size: 1.2em;
+            padding: 18px 14px;
+            border-radius: 10px;
+            background: #eafaf1;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background 0.2s;
+        }
+        .available-slots li:hover {
+            background: #d4f5e9;
+        }
+        .occupied-slots li {
+            color: #dc3545;
+            margin-bottom: 14px;
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            background: #f8d7da;
+            border-radius: 10px;
+            padding: 18px 14px;
+            font-size: 1.2em;
+            justify-content: space-between;
+            transition: background 0.2s;
+        }
+        .occupied-slots li:hover {
+            background: #f3bfc4;
+        }
+        .car-image {
+            width: 60px;
+            height: 40px;
+            object-fit: contain;
+            display: inline-block;
+        }
+        .slot-label {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+        .slot-details-btn {
+            margin-left: auto;
+            padding: 8px 18px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 6px rgba(0,123,255,0.08);
+        }
+        .slot-details-btn:hover {
+            background: #0056b3;
+            box-shadow: 0 4px 12px rgba(0,123,255,0.14);
+        }
+        .timer {
+            font-family: 'Courier New', monospace;
+            background: #2d3436;
+            color: #55efc4;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-left: auto;
+        }
+        .stop-timer-btn {
+            padding: 8px 18px;
+            background: #e74c3c;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 1em;
+            cursor: pointer;
+            transition: background 0.2s, box-shadow 0.2s;
+        }
+        .stop-timer-btn:hover {
+            background: #c0392b;
+        }
+        .stop-timer-btn:disabled {
+            background: #95a5a6;
+            cursor: not-allowed;
+        }
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+            position: relative;
+        }
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            position: absolute;
+            right: 20px;
+            top: 10px;
+        }
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #modalContent {
+            margin-top: 20px;
+        }
+        #modalContent p {
+            margin: 10px 0;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+        #modalContent strong {
+            color: #2c3e50;
+        }
+        /* Responsive adjustments */
+        @media (max-width: 900px) {
+            .slots-container {
+                flex-direction: column;
+                max-width: 98vw;
+                gap: 24px;
+                padding: 18px 6px;
+            }
+            .available-slots, .occupied-slots {
+                width: 100%;
+                min-width: unset;
+            }
+        }
